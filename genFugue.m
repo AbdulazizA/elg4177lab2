@@ -14,7 +14,7 @@ function genFugue(enableImprovements)
 	lengthInPulses = 0;
 	for n = 1:length(theVoices)
 		finalNoteIndex = length(theVoices(n).startPulses);
-		if finalNoteIndex!=0
+		if finalNoteIndex~=0
 			finalNoteStart = theVoices(n).startPulses(finalNoteIndex);
 			finalLengthOfChannel = finalNoteStart+theVoices(n).durations(finalNoteIndex);
 		else
