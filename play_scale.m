@@ -21,10 +21,18 @@ function play_scale(enableImprovements)
 			tone = cleanNote(amplitude,keynum,120,4,tone);
 		end
         n2 = n1 + length(tone) - 1;
+        %part 3.2
         xx(n1:n2) = xx(n1:n2) + tone; %<=== Insert the note
         n1 = n2 + 1;
     end
     
 	soundsc( xx, fs);
+    
+    %part 3.3
+    %Function spectrogram of the scale
+    %shows frequency content of time signal
+    specgram(xx,512,fs);
+    zoom on
+    %plotspec(xx,fs);
 end
 
