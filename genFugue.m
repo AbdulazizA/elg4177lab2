@@ -46,7 +46,18 @@ function genFugue(enableImprovements)
 			channelSignal(n1:n2) = channelSignal(n1:n2)+tone;
 		end
 		finalSignal = finalSignal + channelSignal;
-	end
+    end
 
 	soundsc(finalSignal,fs);
+    
+    %spectrum analysis
+    specgram(finalSignal,512,fs);
+    zoom on
+    
+    %create sound file
+    
+    filename = 'bachfugue.wav';
+    audiowrite(filename,finalSignal,fs);
+
+    
 end
