@@ -50,14 +50,9 @@ function genFugue(enableImprovements)
 
 	soundsc(finalSignal,fs);
     
-    %spectrum analysis
     specgram(finalSignal,512,fs);
     zoom on
     
-    %create sound file
     
-    filename = 'bachfugue.wav';
-    audiowrite(filename,finalSignal,fs);
-
     
 end

@@ -14,7 +14,7 @@ function soundSignal = key2note(X, keyNum, dur)
     fs = 11025; %-- or use 8000 Hz
     tt = 0:(1/fs):dur;
     %part 3.1
-    freq = middleCFreq*2^((keyNum-39)/12); %the -39 reflects the fact that middle-C is key 40
+    freq = middleCFreq*2^((keyNum-49)/12); %the -49 reflects the fact that A is key 49
     soundSignal = real(X*exp(2i*pi*freq*tt));
     
     plot(tt, soundSignal);
